@@ -36,7 +36,7 @@ function SearchBar() {
 
   return (
     <div className="relative">
-      <span className="absolute top-1/4 bottom-1/4 left-4 text-white/80">
+      <span className="absolute top-1/4 bottom-1/4 md:left-4 left-2 text-white/80">
         <SearchIcon />
       </span>
       <input
@@ -44,7 +44,7 @@ function SearchBar() {
         value={input}
         onChange={handleChange}
         placeholder="Search for products..."
-        className="border-2 border-white/30 rounded-xl py-3 pr-40 pl-12  transition-all duration-200 focus:ring-1 focus:ring-blue-400 focus:outline-none"
+        className="border-2 border-white/30 rounded-xl py-3 md:pr-40 md:pl-12 pl-4 transition-all duration-200 focus:ring-1 focus:ring-blue-400 focus:outline-none md:placeholder:text-base md:placeholder:text-left placeholder:text-sm placeholder:text-center"
       />
     </div>
   );

@@ -1,15 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  --product-card: #fefefeff; /* Card color */
-  --body-color: #f9faffff; /* Body Color */
-  --navbar: #0757a8ff; /* Navbar Color */
-  --footer: #002b60ff; /* Footer Color */
-  --filter-card: #0759a7ff; /* filter color */
-  --cart-btn: #025cb1ff; /* cart btn color */
-  --cart-nav-btn: #002b5bff; /* cart nav btn */
-}
-
 body {
   background: var(--body-color);
   color: rgb(241, 241, 241);

@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
 import { ReduxProvider } from "./redux/store/provider";
+import { Toaster } from "react-hot-toast";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${roboto.variable} ${geistMono.variable} antialiased`}>
         <ReduxProvider>
+          <Toaster />
           <Header />
           {children}
           <Footer />
