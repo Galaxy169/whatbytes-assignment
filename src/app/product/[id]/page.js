@@ -2,6 +2,7 @@
 
 import { products } from "@/app/lib/productData";
 import { addToCart } from "@/app/redux/store/slices/cartSlice";
+import { ShoppingCartIcon } from "lucide-react";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { useDispatch } from "react-redux";
 
@@ -23,7 +24,7 @@ export default function ProductDetail({ params }) {
       <div className="p-8 flex flex-col md:flex-row gap-11 justify-center items-center">
         <img
           src={product.image}
-          className="w-full md:w-2/4 object-cover rounded"
+          className="w-full md:w-2/5 object-cover rounded"
           alt={product.title}
         />
 
@@ -31,15 +32,16 @@ export default function ProductDetail({ params }) {
           <h1 className="text-2xl font-bold mb-2">{product.title}</h1>
           <p className="text-xl text-blue-700 mb-4">${product.price}</p>
           <p className="mb-4">{product.description}</p>
+          <p className="text-sm text-gray-500 mb-4">Brand: {product.brand}</p>
           <p className="text-sm text-gray-500 mb-4">
             Category: {product.category}
           </p>
 
           <button
-            className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
+            className="flex rounded-xl gap-2 px-8 py-3 bg-[#025cb1] cursor-pointer text-white justify-center items-center duration-300 transition-all hover:bg-[#002b5bff]"
             onClick={() => dispatch(addToCart(product))}
           >
-            Add to Cart
+            <ShoppingCartIcon /> Add to Cart
           </button>
         </div>
       </div>

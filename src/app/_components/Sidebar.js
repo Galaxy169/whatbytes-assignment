@@ -1,30 +1,53 @@
+"use client";
+
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+
 function Sidebar() {
+  const [category, setCategory] = useState("All");
+  const [price, setPrice] = useState(1000);
+
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const cat = searchParams.get("category") || "All";
+    const price = parseInt(searchParams.get("price") || "1000");
+    setCategory(cat);
+    setPrice(price);
+  }, [searchParams]);
+
+  const filterUpdate = (cat, price) => {
+    const params = new URLSearchParams(searchParams.toString());
+
+    if (cat && cat !== "All") {
+      params.set("category", cat.toLowerCase());
+    } else {
+      params.delete("category");
+    }
+
+    if (price < 1000) {
+      params.set("price", price.toString());
+    } else {
+      params.delete("price");
+    }
+    router.push(`${pathname}?${params.toString()}`);
+  };
+
+  const handleCategoryChange = (e) => {
+    const newCategory = e.target.value;
+    setCategory(newCategory);
+    filterUpdate(newCategory, price);
+  };
+
+  const handlePriceChange = (e) => {
+    const newPrice = e.target.value;
+    setPrice(newPrice);
+    filterUpdate(category, newPrice);
+  };
+
   return (
-    // <aside className="text-white bg-[#0759a7ff]  gap-4 w-1/5 p-5 rounded-3xl">
-    //   <div>
-    //     <h1 className="text-2xl">Filters</h1>
-    //   </div>
-    //   <form className="flex  justify-center items-center">
-    //     <p className="text-xl mb-3">Category</p>
-    //     <input type="radio" id="all" name="category" value="all" />
-    //     <label htmlFor="all" className="">All</label>
-    //     <input
-    //       type="radio"
-    //       id="electronics"
-    //       name="category"
-    //       value="electronics"
-    //     />
-    //     <label htmlFor="electronics">Electronics</label>
-    //     <input type="radio" id="clothing" name="category" value="clothing" />
-    //     <label htmlFor="clothing">Clothing</label>
-    //     <input type="radio" id="home" name="category" value="home" />
-    //     <label htmlFor="home">Home</label>
-
-    //     <p className="text-xl">Price</p>
-    //     <input type="range" />
-    //   </form>
-    // </aside>
-
     <aside className="w-full max-w-[270px] max-h-100 bg-[#0759a7ff] px-6 py-6 m-2 rounded-3xl">
       <h2 className="font-bold mb-5 text-2xl">Filters</h2>
 
@@ -38,6 +61,7 @@ function Sidebar() {
                   type="radio"
                   name="category"
                   value={cat}
+                  onChange={handleCategoryChange}
                   defaultChecked={cat === "All"}
                 />
                 {cat}
@@ -48,11 +72,19 @@ function Sidebar() {
       </div>
 
       <div>
-        <h3 className="font-semibold text-xl mb-2">Price</h3>
-        <input type="range" min="0" max="1000" className="w-full mt-2" />
+        <h3 className="font-semibold text-xl mb-2">Price (${price})</h3>
+        <input
+          type="range"
+          min="0"
+          max="1000"
+          step={100}
+          className="w-full mt-2"
+          value={price}
+          onChange={handlePriceChange}
+        />
         <div className="flex justify-between text-lg">
-          <p>0</p>
-          <p>100</p>
+          <p>$0</p>
+          <p>$1000</p>
         </div>
       </div>
     </aside>

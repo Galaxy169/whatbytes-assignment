@@ -5,13 +5,23 @@ import ProductCard from "./_components/ProductCard";
 import Sidebar from "./_components/Sidebar";
 import { products } from "./lib/productData";
 
-function page() {
+function HomePage() {
   const searchParams = useSearchParams();
   const search = searchParams.get("search")?.toLowerCase() || "";
+  const category = searchParams.get("category");
+  const maxPrice = parseInt(searchParams.get("price") || "1000");
 
-  const filteredProducts = products.filter((product) =>
-    product.title.toLowerCase().includes(search)
-  );
+  const filteredProducts = products.filter((product) => {
+    const matchesSearch = product.title.toLowerCase().includes(search);
+    const matchesCategory =
+      !category ||
+      category === "all" ||
+      product.category.toLowerCase() === category;
+    const matchesPrice = product.price <= maxPrice;
+
+    return matchesSearch && matchesCategory && matchesPrice;
+  });
+
   return (
     <div>
       <main className="flex flex-col md:flex-row gap-6 p-6 mt-2">
@@ -20,7 +30,7 @@ function page() {
           {filteredProducts.length ? (
             filteredProducts.map((p) => <ProductCard key={p.id} product={p} />)
           ) : (
-            <p>No products found.</p>
+            <p className="text-stone-950 text-2xl mt-10">No products found...</p>
           )}
         </section>
       </main>
@@ -28,4 +38,4 @@ function page() {
   );
 }
 
-export default page;
+export default HomePage;

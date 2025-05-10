@@ -27,9 +27,9 @@ function ProductCard({ product }) {
           <p className="font-semibold text-lg mb-2">${product.price}</p>
           <div
             onClick={(e) => handleAddToCart(e, product)}
-            className="flex gap-2 px-8 py-3 rounded-xl bg-[#025cb1] text-white justify-center items-center"
+            className="flex gap-2 px-8 py-3 rounded-xl bg-[#025cb1] text-white justify-center items-center duration-300 transition-all hover:bg-[#002b5bff]"
           >
-            <button className="font-bold">Add to Cart</button>
+            <button className="font-bold cursor-pointer">Add to Cart</button>
           </div>
         </div>
       </Link>

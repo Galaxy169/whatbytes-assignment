@@ -6,16 +6,18 @@ function Navbar() {
   return (
     <navbar className="flex justify-between items-center">
       <div>
-        <Link href="/" className="text-3xl mx-4">LOGO</Link>
+        <Link href="/" className="text-3xl mx-4">
+          LOGO
+        </Link>
       </div>
       <div className="flex items-center gap-10">
         <SearchBar />
         <Link
           href="/cart"
-          className="flex gap-2 px-8 py-3 rounded-xl bg-[#002b5b]"
+          className="flex gap-2 px-8 py-3 rounded-xl bg-[#002b5b] hover:scale-105 duration-300 transition-all hover:bg-blue-900"
         >
           <ShoppingCartIcon />
-          <button className="font-bold">Cart</button>
+          <button className="font-bold text-lg">Cart</button>
         </Link>
       </div>
     </navbar>

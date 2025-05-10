@@ -44,7 +44,7 @@ function SearchBar() {
         value={input}
         onChange={handleChange}
         placeholder="Search for products..."
-        className="border-2 border-white/30 rounded-xl py-3 pr-40 pl-12"
+        className="border-2 border-white/30 rounded-xl py-3 pr-40 pl-12  transition-all duration-200 focus:ring-1 focus:ring-blue-400 focus:outline-none"
       />
     </div>
   );
