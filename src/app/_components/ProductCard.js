@@ -1,16 +1,16 @@
 "use client";
 
-import { ShoppingCartIcon } from "lucide-react";
-import { products } from "../lib/productData";
-import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/store/slices/cartSlice";
 
 function ProductCard({ product }) {
-  //   const [productState, setProductState] = useState();
-  //   products.map((product) => {
-  //     setProductState(product);
-  //   });
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (e, id) => {
+    e.preventDefault();
+    dispatch(addToCart(id));
+  };
   return (
     <>
       <Link href={`/product/${product.id}`} className="block">
@@ -25,8 +25,11 @@ function ProductCard({ product }) {
           />
           <h3 className="font-bold text-xl">{product.title}</h3>
           <p className="font-semibold text-lg mb-2">${product.price}</p>
-          <div className="flex gap-2 px-8 py-3 rounded-xl bg-[#025cb1] text-white justify-center items-center">
-            <button className="font-bold ">Add to Cart</button>
+          <div
+            onClick={(e) => handleAddToCart(e, product)}
+            className="flex gap-2 px-8 py-3 rounded-xl bg-[#025cb1] text-white justify-center items-center"
+          >
+            <button className="font-bold">Add to Cart</button>
           </div>
         </div>
       </Link>

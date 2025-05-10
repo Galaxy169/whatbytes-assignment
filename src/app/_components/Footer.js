@@ -6,9 +6,10 @@ function Footer() {
     <footer className="bg-[#002b60] items-center py-8">
       <div className="flex justify-around">
         <div className="">
-          <h1 className="text-2xl font-bold mb-5">About Us</h1>
+          <h1 className="text-2xl font-bold mb-5">Navigate</h1>
           <div className="flex flex-col gap-4">
-            <Link href="#">About us</Link>
+            <Link href="/">Home</Link>
+            <Link href="/cart">Cart</Link>
           </div>
           <p className="mt-8">&copy; 2024 America</p>
         </div>
