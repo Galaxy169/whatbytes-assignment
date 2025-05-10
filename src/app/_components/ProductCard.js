@@ -4,15 +4,16 @@ import { ShoppingCartIcon } from "lucide-react";
 import { products } from "../lib/productData";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
-function ProductCard() {
+function ProductCard({ product }) {
   //   const [productState, setProductState] = useState();
   //   products.map((product) => {
   //     setProductState(product);
   //   });
   return (
     <>
-      {products.map((product) => (
+      <Link href={`/product/${product.id}`} className="block">
         <div
           className="flex flex-col text-slate-900 bg-[#fefefe] rounded-md p-4 gap-1 shadow hover:shadow-lg transition"
           key={product.id}
@@ -28,7 +29,7 @@ function ProductCard() {
             <button className="font-bold ">Add to Cart</button>
           </div>
         </div>
-      ))}
+      </Link>
     </>
   );
 }

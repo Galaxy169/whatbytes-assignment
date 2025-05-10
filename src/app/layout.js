@@ -2,6 +2,7 @@ import { Geist, Geist_Mono, Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
+import { ReduxProvider } from "./redux/store/provider";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -21,12 +22,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${roboto.variable} ${geistMono.variable} antialiased`}
-      >
-        <Header />
-        {children}
-        <Footer />
+      <body className={`${roboto.variable} ${geistMono.variable} antialiased`}>
+        <ReduxProvider>
+          <Header />
+          {children}
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );
