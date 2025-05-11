@@ -10,7 +10,7 @@ function SidebarMobile() {
   return (
     <>
       <div
-        className={`md:hidden fixed ${
+        className={`lg:hidden fixed ${
           !isOpen ? "bg-blue-900" : "bg-red-700"
         }  gap-2 text-slate-200 rounded-2xl py-4 flex flex-col items-center z-10 top-1/2 right-0`}
         onClick={() => setIsOpen((Open) => !Open)}

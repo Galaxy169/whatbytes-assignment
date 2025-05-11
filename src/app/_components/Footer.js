@@ -16,12 +16,14 @@ function Footer() {
             </Link>
             <Link
               href="/cart"
-              className="hover:text-slate-400 transition-all duration-300"
+              className="hover:text-slate-400 transition-all duration-300 "
             >
               Cart
             </Link>
           </div>
-          <p className="md:block hidden mt-8">&copy; 2025 America</p>
+          <p className="md:block hidden mt-8 ">
+            &copy; 2025 WhatBytes. All rights reserved.
+          </p>
         </div>
         <div className="">
           <h1 className="text-2xl font-bold mb-5">About Us</h1>
@@ -58,7 +60,9 @@ function Footer() {
           </div>
         </div>
       </div>
-      <p className="mt-10 block md:hidden text-center">&copy; 2025 America</p>
+      <p className="mt-10 block md:hidden text-center">
+        &copy; 2025 WhatBytes. All rights reserved. Made with 💚 By Aadil
+      </p>
     </footer>
   );
 }

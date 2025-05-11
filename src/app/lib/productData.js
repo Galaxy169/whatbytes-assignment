@@ -41,7 +41,7 @@ export const products = [
       "Soft, breathable organic cotton t-shirt with a modern fit. Available in multiple colors.",
     category: "clothing",
     brand: "EcoWear",
-    rating: 4.3,
+    rating: 4,
     image: tshirt1,
   },
   {
@@ -52,7 +52,7 @@ export const products = [
       "Vacuum-insulated stainless steel water bottle that keeps drinks cold for 24 hours or hot for 12 hours.",
     category: "accessories",
     brand: "HydroFlow",
-    rating: 4.7,
+    rating: 3,
     image: bottle1,
   },
   {

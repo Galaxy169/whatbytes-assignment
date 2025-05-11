@@ -1,6 +1,6 @@
 function loading() {
     return (
-        <div className="text-slate-700 text-6xl">
+        <div className="text-slate-700 text-4xl text-center">
             Loading...
         </div>
     )

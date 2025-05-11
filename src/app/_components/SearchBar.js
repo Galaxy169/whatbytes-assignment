@@ -44,7 +44,7 @@ function SearchBar() {
         value={input}
         onChange={handleChange}
         placeholder="Search for products..."
-        className="border-2 border-white/30 rounded-xl py-3 md:pr-40 md:pl-12 pl-4 transition-all duration-200 focus:ring-1 focus:ring-blue-400 focus:outline-none md:placeholder:text-base md:placeholder:text-left placeholder:text-sm placeholder:text-center"
+        className="border-2 border-white/30 rounded-xl py-3 lg:w-9/4 md:w-5/4  md:pl-14 pl-4 transition-all duration-200 focus:ring-1 focus:ring-blue-400 focus:outline-none md:placeholder:text-base md:placeholder:text-left placeholder:text-sm placeholder:text-center"
       />
     </div>
   );

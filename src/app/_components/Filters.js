@@ -48,10 +48,10 @@ function Filters() {
 
   return (
     <>
-      <div className="mb-4">
+      <div className="mb-4 z-9">
         <h3 className="font-semibold text-xl mb-2">Category</h3>
         <ul className="space-y-1">
-          {["All", "Electronics", "Clothing", "Home Appliances"].map((cat) => (
+          {["All", "Electronics", "Clothing", "Appliances"].map((cat) => (
             <li key={cat}>
               <label className="flex items-center gap-3 text-lg cursor-pointer">
                 <input

@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/store/slices/cartSlice";
 import toast from "react-hot-toast";
 import Image from "next/image";
+import Ratings from "./Ratings";
 
 function ProductCard({ product }) {
   const dispatch = useDispatch();
@@ -28,10 +29,10 @@ function ProductCard({ product }) {
           />
           <h3 className="font-bold text-xl">{product.title}</h3>
           <p className="font-semibold text-lg">${product.price}</p>
-          <p className="text-yellow-600 mb-2">⭐{product.rating}</p>
+          <Ratings rating={product.rating} />
           <div
             onClick={(e) => handleAddToCart(e, product)}
-            className="flex gap-2 px-8 py-3 rounded-xl bg-[#025cb1] text-white justify-center items-center duration-300 transition-all hover:bg-[#002b5bff]"
+            className="flex gap-2 px-8 py-3 mt-2 rounded-xl bg-[#025cb1] text-white justify-center items-center duration-300 transition-all hover:bg-[#002b5bff]"
           >
             <button className="font-bold cursor-pointer">Add to Cart</button>
           </div>
