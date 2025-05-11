@@ -23,17 +23,6 @@ export const products = [
     rating: 4.8,
   },
   {
-    id: 2,
-    title: "Wireless Headphones",
-    price: 149.99,
-    description:
-      "Premium noise-cancelling wireless headphones with 30-hour battery life and comfortable over-ear design.",
-    category: "electronics",
-    brand: "SoundMaster",
-    rating: 4.6,
-    image: headphone1,
-  },
-  {
     id: 3,
     title: "Organic Cotton T-Shirt",
     price: 24.99,
@@ -87,6 +76,17 @@ export const products = [
     brand: "AthleteChoice",
     rating: 4.6,
     image: shoes1,
+  },
+  {
+    id: 2,
+    title: "Wireless Headphones",
+    price: 149.99,
+    description:
+      "Premium noise-cancelling wireless headphones with 30-hour battery life and comfortable over-ear design.",
+    category: "electronics",
+    brand: "SoundMaster",
+    rating: 4.6,
+    image: headphone1,
   },
   {
     id: 8,

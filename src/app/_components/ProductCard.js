@@ -25,7 +25,7 @@ function ProductCard({ product }) {
           <Image
             src={product.image}
             alt={product.title}
-            className="w-full h-60 object-cover mb-2"
+            className="w-full h-60 object-cover mb-2 hover:rounded-[50px] transition-all duration-700 rounded-3xl"
           />
           <h3 className="font-bold text-xl">{product.title}</h3>
           <p className="font-semibold text-lg">${product.price}</p>

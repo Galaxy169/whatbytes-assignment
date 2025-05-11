@@ -9,6 +9,7 @@ import { ShoppingBagIcon, Trash2 } from "lucide-react";
 import toast from "react-hot-toast";
 import Image from "next/image";
 
+
 function CartPage() {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();

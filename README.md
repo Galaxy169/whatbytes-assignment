@@ -2,7 +2,7 @@
 
 ## Preview
 
-Visit the website for live preview: https://taskify-website1.netlify.app/
+Visit the website for live preview: https://whatbytes-assignment-tawny.vercel.app/
 
 ## Features Implemented
 
