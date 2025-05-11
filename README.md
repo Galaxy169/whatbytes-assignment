@@ -13,9 +13,8 @@ Visit the website for live preview: https://whatbytes-assignment-tawny.vercel.ap
 - **/product/[id] page**: Product Card: Large Image on the left, product details on right: product title, price, rating stars, description, category, brand name, Quantity Selector, Add to Cart button.  
 - **/cart Page**: List of added product, product card with details: small image, title, price, quantity update control, remove product, total items, price summary, checkout button
 - **Logic**: Redux for state management, fully working cart, url based search filter with debounce, url based filters, dynamic routing, saving cart to localStorage, toast messages, styled using TailwindCSS, fully responsive across multiple devices and viewport
-- **History Tracking**: Saves quiz history using **IndexedDB**.
-- **Deployment**: Easily deployable on **Netlify** or **Vercel**.
-- **Responsive and Dark Mode**: The app is responsive and has dark and light mode theme.
+- **Reponsive**: It is fully responsive .
+- **Deployment**: Deployable on **Vercel** with CI/CD
 
 ## Getting Started
 
